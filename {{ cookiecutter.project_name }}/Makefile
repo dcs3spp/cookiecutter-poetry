@@ -1,4 +1,4 @@
-.PHONY: setup  test lint pretty bump_major bump_minor bump_patch
+.PHONY: setup test lint pretty bump_major bump_minor bump_patch
 
 BIN = .venv/bin/
 CODE = {{ cookiecutter.project_slug }}
@@ -6,6 +6,9 @@ CODE = {{ cookiecutter.project_slug }}
 EXECUTABLES = poetry
 K := $(foreach exec,$(EXECUTABLES),\
         $(if $(shell which $(exec)),some string,$(error "No $(exec) in PATH")))
+
+build:
+	poetry build
 
 setup:
 	poetry install
