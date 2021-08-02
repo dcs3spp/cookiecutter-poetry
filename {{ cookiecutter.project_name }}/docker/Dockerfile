@@ -15,7 +15,7 @@
 ##
 # base: Configure python environment and set workdir
 ##
-FROM python:3.8-slim as base
+FROM python:{{ cookiecutter.python_version }}-slim as base
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
   PYTHONFAULTHANDLER=1 \
